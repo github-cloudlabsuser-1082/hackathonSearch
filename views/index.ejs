@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search UI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        #searchTerm {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div><h1>Hackathon Search</h1></div>
+        <div>
+            <input type="text" id="searchTerm" placeholder="Enter search term">
+            <button onclick="searchContent()">Search</button>
+            <p id="result"></p>
+        </div>
+
+    </div>
+    
+    <script>
+        let text = "Hello, I am GitHub Copilot. I am here to assist you.";
+
+        function searchContent() {
+            let searchTerm = document.getElementById('searchTerm').value;
+            let resultElement = document.getElementById('result');
+
+            if(text.includes(searchTerm)) {
+                resultElement.textContent = `The text includes the term: ${searchTerm}`;
+            } else {
+                resultElement.textContent = `The text does not include the term: ${searchTerm}`;
+            }
+        }
+    </script>
+</body>
+</html>
