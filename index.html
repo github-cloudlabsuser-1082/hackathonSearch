@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #result {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchTerm" placeholder="Enter search term">
+    <button onclick="searchContent()">Search</button>
+    <p id="result"></p>
+
+    <script>
+        let text = "Hello, I am GitHub Copilot. I am here to assist you.";
+
+        function searchContent() {
+            let searchTerm = document.getElementById('searchTerm').value;
+            let resultElement = document.getElementById('result');
+
+            if(text.includes(searchTerm)) {
+                resultElement.textContent = `The text includes the term: ${searchTerm}`;
+            } else {
+                resultElement.textContent = `The text does not include the term: ${searchTerm}`;
+            }
+        }
+    </script>
+</body>
+</html>
